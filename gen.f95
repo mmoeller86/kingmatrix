@@ -33,12 +33,12 @@ program GenKingMatrix
 		
 		sum = CMPLX(0.0, 0.0)
 		do j=1, cols
-			sum = sum + eig (i)
+			sum = sum + eig (j)
 		end do
 		
 		s = REALPART (sum) / cols
 		print *, s
-		if (s .ge. 0.0 .AND. s .le. 1.0) then
+		if (s .lt. (pi / 2)) then
 			print *, 'Generated a king matrix...'
 			stop 0
 		end if
